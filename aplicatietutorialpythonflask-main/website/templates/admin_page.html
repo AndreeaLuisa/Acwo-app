@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %} Admin {% endblock %}
+
+{% block content %}
+   <head>
+      <title>Title of the document</title>
+   </head>
+   <body>
+    <br></br>
+      <form style="text-align: center;"  action="/admin_add_teams">
+         <button type="submit" class="btn btn-light">Add teams</button>
+      </form>
+      <br></br>
+      <form style="text-align: center;"  action="/admin_test">
+        <button type="submit" class="btn btn-light">Test</button>
+     </form>
+     <br></br>
+     <!-- <br></br> -->
+     <!-- <form style="text-align: center;"  action="/admin_reset">
+        <button type="submit" class="btn btn-light">Reset Time</button>
+     </form> -->
+     <form style="text-align: center;"  action="/admin_add_tests">
+       <button type="submit" class="btn btn-light">Add Tests</button>
+    </form>
+    <br></br>
+    <form style="text-align: center;"  action="/admin_delete_table">
+       <button type="submit" class="btn btn-light">Delete Table</button>
+    </form>
+     <br></br>
+    <form style="text-align: center;" action="/admin_add_points">
+       <button type="submit" class="btn btn-light">Add Points</button>
+    </form>
+     <br></br>
+     <form style="text-align: center;" action="/admin_add_penalisations">
+       <button type="submit" class="btn btn-light">Add Penalisation</button>
+    </form>
+     <br></br>
+     <form style="text-align: center;" action="/admin_results">
+       <button type="submit" class="btn btn-light">See results</button>
+    </form>
+     <br></br>
+     <h1>
+      {% with messages = get_flashed_messages() %}
+         {% if messages %}
+            {% for message in messages %}
+               <h3>{{ message }}</h3>
+            {% endfor %}
+         {% endif %}
+      {% endwith %}
+     </h1> 
+   </body>
+{% endblock%}
