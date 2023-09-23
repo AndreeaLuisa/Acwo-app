@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% block title %}AcWo23 - Ranking{% endblock %}
+
+{% block content %}
+
+
+  
+    
+    <div class="box">
+        <h1>Clasament</h1>
+        
+        <div class="clasament">
+        {% for c in clasament%}
+            <br>{{c.username}} - {{c.punctaj}}
+        {%endfor%}
+        </div>
+        
+    </div>
+
+<style>
+
+
+
+
+
+
+
+
+
+.box {
+  position: absolute;
+ 
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height:500px;
+  padding: 10px;
+  transform: translate(-50%, -50%);
+  background:white;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+  
+}
+.team{
+        background-color: #fafcfd;
+        color: rgb(73, 71, 201);
+        width: 500px;
+    }
+
+    .card.team h4{
+        margin-top: 20px;
+        text-align: center;
+        font-size: 35px;
+    }
+
+    .card.team img{
+        display: block;
+        margin-top: 50px;
+        margin-bottom: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        border-radius: 20px;
+    }
+
+    .box.info{
+        padding: 15px 20px;
+    }
+
+    .box.info h1{
+        text-align: center;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #003366;
+    }
+
+    .box{
+        padding: 15px 20px;
+        text-align: center;
+        font-weight: bold;
+        
+    }
+
+    .box h1{
+        text-align: center;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        font-weight: bold;
+        border-bottom: 2px solid black;
+        color:black;
+    }
+
+    .box .clasament{
+        padding-top: 10px;
+        text-align:center;
+        
+       
+        font-weight: bold;
+        font-size: 20px;
+        padding-bottom: 5px;
+        color:black;
+    }
+
+    .wave {
+  opacity: .4;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  background: #0af;
+  width: 500px;
+  height: 500px;
+  margin-left: -250px;
+  margin-top: -250px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 3000ms infinite linear;
+}
+
+.wave.-three {
+  animation: drift 5000ms infinite linear;
+}
+
+.wave.-two {
+  animation: drift 7000ms infinite linear;
+  opacity: .1;
+  background: yellow;
+}
+.box::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+.box::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+
+
+
+
+
+
+   
+
+   
+
+
+</style>
+
+{% endblock%}
